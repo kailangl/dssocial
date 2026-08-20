@@ -8,6 +8,7 @@ import card4 from "../images/card4.png";
 import card5 from "../images/card5.png";
 import card6 from "../images/card6.png";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 import {
   Laptop2,
   HeartHandshake,
@@ -104,10 +105,10 @@ const offers: Offer[] = [
 ];
 
 const stats: Stat[] = [
-  { value: "+1.200", label: "Alunos Impactados" },
-  { value: "+80", label: "Turmas Realizadas" },
-  { value: "+25", label: "Voluntários" },
-  { value: "97%", label: "Satisfação" },
+  { value: "+67.000", label: "Alunos Impactados" },
+  { value: "+6", label: "Turmas Realizadas" },
+  { value: "+7", label: "Voluntários" },
+  { value: "98,67%", label: "Satisfação" },
 ];
 
 export function Home() {
@@ -117,37 +118,14 @@ export function Home() {
       <div className="absolute top-40 left-20 w-72 h-32 bg-purple-900/30 blur-[80px] rounded-full pointer-events-none"></div>
       <div className="absolute top-1/2 right-20 w-96 h-96 bg-blue-900/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-      {/* Cabeçalho */}
-      <header className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto w-full z-10">
+      
 
-        {/* Logo  */}
-        <div className="flex items-center gap-4">
-          <div className="w-16 h-16 bg-gray-300 rounded-xl flex items-center justify-center text-black font-bold text-xs">
-            <img src={logo} alt="Logo Evolução Digital" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-purple-600">Evo</span>
-            <span className="text-white">lução Digital</span>
-          </h1>
-        </div>
+   
 
-        {/* Links */}
-        <nav className="hidden lg:flex gap-8 font-semibold text-lg items-center">
-          <a href="#" className="text-blue-600 border-b-2 border-blue-600 pb-1">Início</a>
-          <a href="#" className="text-gray-300 hover:text-white transition">Cursos</a>
-          <a href="#" className="text-gray-300 hover:text-white transition">Sobre</a>
-          <a href="#" className="text-gray-300 hover:text-white transition">Contato</a>
-          <a href="#" className="text-gray-300 hover:text-white transition">Serviços</a>
-        </nav>
+       <Header />
 
-        {/* Botão Entrar */}
-        <Link
-          to="/login"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition inline-flex items-center justify-center"
-        >
-          Entrar
-        </Link>
-      </header>
+      
+     
 
       {/* Hero */}
       <main className="flex-1 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto w-full px-6 py-16 z-10 gap-12">
