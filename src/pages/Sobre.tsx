@@ -1,4 +1,4 @@
-export function About() {
+export function Sobre() {
   return (
     <div>
       

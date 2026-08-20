@@ -1,6 +1,13 @@
 import { APITester } from "../APITester";
 import notebook from "../images/notebook.png";
 import logo from "../images/logo.png";
+import card1 from "../images/card1.png";
+import card2 from "../images/card2.png";
+import card3 from "../images/card3.png";
+import card4 from "../images/card4.png";
+import card5 from "../images/card5.png";
+import card6 from "../images/card6.png";
+import { Link } from "react-router-dom";
 import {
   Laptop2,
   HeartHandshake,
@@ -24,6 +31,7 @@ interface Offer {
   title: string;
   subtitle: string;
   gradient: string;
+  image: string;
   icon?: LucideIcon;
 }
 
@@ -60,32 +68,38 @@ const offers: Offer[] = [
     title: "Card 1",
     subtitle: "O que é um computador",
     gradient: "from-neutral-700 via-neutral-800 to-neutral-900",
+    image: card1,
   },
   {
     title: "Segurança Digital",
     subtitle: "Vírus, golpes, proteção de dados e boas práticas.",
     gradient: "from-blue-950 via-slate-900 to-black",
+    image: card2,
     icon: ShieldCheck,
   },
   {
     title: "Card 3",
     subtitle: "Ferramenta de trabalho",
     gradient: "from-blue-600 via-blue-800 to-slate-900",
+    image: card3,
   },
   {
     title: "Excel do Básico",
     subtitle: "Fórmulas, planilhas, gráficos e dashboards.",
     gradient: "from-emerald-600 via-emerald-800 to-slate-900",
+    image: card4,
   },
   {
     title: "Card 5",
     subtitle: "Formatação",
     gradient: "from-slate-800 via-blue-950 to-black",
+    image: card5,
   },
   {
     title: "Hardware & Software",
     subtitle: "Entenda como o computador funciona por dentro.",
     gradient: "from-purple-700 via-fuchsia-800 to-blue-900",
+    image: card6,
   },
 ];
 
@@ -127,9 +141,12 @@ export function Home() {
         </nav>
 
         {/* Botão Entrar */}
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition">
+        <Link
+          to="/login"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition inline-flex items-center justify-center"
+        >
           Entrar
-        </button>
+        </Link>
       </header>
 
       {/* Hero */}
@@ -156,12 +173,18 @@ export function Home() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-semibold transition">
+            <Link
+              to="/register"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-semibold transition inline-flex items-center justify-center"
+            >
               Começar agora
-            </button>
-            <button className="border border-purple-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-purple-900/20 transition">
+            </Link>
+            <Link
+              to="/login"
+              className="border border-purple-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-purple-900/20 transition inline-flex items-center justify-center"
+            >
               Já tenho conta
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -197,16 +220,24 @@ export function Home() {
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {offers.map(({ title, subtitle, gradient, icon: Icon }) => (
+          {offers.map(({ title, subtitle, gradient, image, icon: Icon }) => (
             <div
               key={title}
               className={`relative h-48 rounded-2xl p-6 overflow-hidden bg-gradient-to-br ${gradient} border border-white/10 shadow-[0_0_25px_rgba(59,130,246,0.15)] hover:-translate-y-1 transition duration-300`}
             >
+              <img
+                src={image}
+                alt={title}
+                className="absolute inset-0 h-full w-full object-cover opacity-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               {Icon && (
                 <Icon className="absolute right-6 bottom-6 w-16 h-16 text-white/10" />
               )}
-              <h4 className="font-semibold text-white">{title}</h4>
-              <p className="text-sm text-gray-300 mt-2 max-w-[70%]">{subtitle}</p>
+              <div className="relative z-10">
+                <h4 className="font-semibold text-white">{title}</h4>
+                <p className="text-sm text-gray-200 mt-2 max-w-[70%]">{subtitle}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -234,9 +265,12 @@ export function Home() {
               <p className="text-sm text-gray-400">Aprenda, ensine e compartilhe conhecimento</p>
             </div>
           </div>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition">
+          <Link
+            to="/register"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition inline-flex items-center justify-center"
+          >
             Quero participar
-          </button>
+          </Link>
         </div>
       </section>
 
