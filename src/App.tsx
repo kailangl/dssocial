@@ -5,7 +5,7 @@ import logo from "./logo.svg";
 import reactLogo from "./react.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
-import  LoginPage from "./pages/LoginPage";
+import { LoginPage } from "./pages/LoginPage";
 import { Sobre } from "./pages/Sobre";
 import { Services } from "./pages/Services";
 import  RegisterPage  from "./pages/RegisterPage";
