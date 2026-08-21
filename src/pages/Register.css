@@ -16,3 +16,37 @@
   }
 }
  
+button {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+  background: linear-gradient(270deg, #8B5CF6, #8B5CF6, #6206FF, #8B5CF6);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: gradientAnimation 5s linear infinite;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+button:hover {
+  transform: scale(1.03) !important;
+}
+
+@keyframes gradientAnimation {
+  from { background-position: 200% 50%; }
+  to { background-position: 0% 50%; }
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+

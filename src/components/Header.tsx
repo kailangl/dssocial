@@ -39,15 +39,13 @@ export function Header() {
       : "text-gray-300 hover:text-white transition pb-1 border-b-2 border-transparent";
 
   return (
-    <header className="relative z-20 w-full">
-      <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto w-full">
+    <header className="relative z-20 w-full shrink-0">
+      <div className="flex min-h-24 items-center justify-between gap-6 px-6 py-3 max-w-7xl mx-auto w-full">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-4 shrink-0">
-          <div className="w-16 h-16 bg-gray-300 rounded-xl flex items-center justify-center text-black font-bold text-xs overflow-hidden">
-            <img src={logo} alt="Logo Evolução Digital" className="w-full h-full object-contain" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-purple-600">Evo</span>
+        <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img src={logo} alt="Logo Evolução Digital" className="w-14 h-14 object-contain" />
+          <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
+            <span className="text-blue-600">Evo</span>
             <span className="text-white">lução Digital</span>
           </h1>
         </Link>

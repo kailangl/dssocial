@@ -1,0 +1,16 @@
+.card-infolg{
+  animation: turn-left 850ms linear forwards;
+}
+
+@keyframes turn-left {
+0% {
+  transform: translate3d(0, 0, 0) rotateY(0);}
+  20% {
+    transform: translate3d(0, 0, 0) rotateY(-2.6deg);}
+    50%{
+      transform: translate3d(0, 0, 0) rotateY(-4.5deg);}
+      80%{
+        transform: translate3d(0, 0, 0) rotateY(-2.6deg);}
+        100%{
+          transform: translate3d(0, 0, 0) rotateY(0);}
+    }
