@@ -273,7 +273,7 @@ export default function LoginPage() {
           </h1>
           <p className="text-sm sm:text-base text-white/90 leading-relaxed mb-6">
             Entre na sua conta e continue de onde parou. Sua jornada
-            continua exatamente como você deixou.
+            continua exatamente como você deixou..
           </p>
           <ul className="list-none pl-0 ml-0 space-y-2 w-full">
             {benefits.map((benefit) => (
